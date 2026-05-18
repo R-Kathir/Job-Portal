@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found |  Recuirment Agency</title>
+    <meta name="description"
+        content="The page you're looking for doesn't exist. Return to Stackly - your premier technical search firm." />
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="404.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <section class="error-section">
+        <div class="error-container">
+
+            <div class="error-visual">
+                <div class="error-code">
+                    <span class="digit digit-4">4</span>
+                    <div class="zero-container">
+                        <span class="digit digit-0">0</span>
+                        <div class="glitch-effect"></div>
+                    </div>
+                    <span class="digit digit-4">4</span>
+                </div>
+            </div>
+
+
+            <div class="error-content">
+                <h1>Oops! Page Not Found</h1>
+                <p>Looks like this page has gone on a coffee break. The page you're looking for doesn't exist or has
+                    been moved.</p>
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <div class="link-buttons">
+                        <a href="index.html" class="link-btn">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="about.html" class="link-btn">
+                            <i class="fas fa-info-circle"></i>
+                            <span>About Us</span>
+                        </a>
+                        <a href="services.html" class="link-btn">
+                            <i class="fas fa-cogs"></i>
+                            <span>Services</span>
+                        </a>
+                        <a href="contact.html" class="link-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="floating-elements">
+                    <div class="float-element element-1">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="float-element element-2">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="float-element element-3">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="float-element element-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="float-element element-5">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+    <script>
+        document.querySelectorAll('.float-element').forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.5}s`;
+        });
+
+        const robot = document.querySelector('.robot');
+        if (robot) {
+            setInterval(() => {
+                document.querySelectorAll('.eye').forEach(eye => {
+                    eye.style.height = '2px';
+                    eye.style.top = '12px';
+                });
+                setTimeout(() => {
+                    document.querySelectorAll('.eye').forEach(eye => {
+                        eye.style.height = '8px';
+                        eye.style.top = '8px';
+                    });
+                }, 150);
+            }, 3000);
+        }
+        document.querySelector('.btn-search').addEventListener('click', function () {
+            const searchTerm = document.querySelector('.search-input-wrapper input').value;
+            if (searchTerm) {
+                alert('Search functionality would find results for: ' + searchTerm);
+            }
+        });
+
+        const zeroContainer = document.querySelector('.zero-container');
+        if (zeroContainer) {
+            setInterval(() => {
+                zeroContainer.classList.add('glitching');
+                setTimeout(() => {
+                    zeroContainer.classList.remove('glitching');
+                }, 200);
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
